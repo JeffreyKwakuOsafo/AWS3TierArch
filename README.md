@@ -8,11 +8,10 @@ Before starting, ensure you have:
 
 An active AWS account
 
-IAM user with sufficient permissions (VPC, EC2, RDS, IAM, ELB)
+IAM user with sufficient knowledge in (VPC, EC2, RDS, IAM, ELB)
 
 Basic knowledge of networking, Linux, and AWS services
 
-AWS CLI and/or access to the AWS Management Console
 
 🌐 Networking
 

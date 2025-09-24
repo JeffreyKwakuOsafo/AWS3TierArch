@@ -1,4 +1,6 @@
+
 🏗️ Project Overview
+<img width="1214" height="548" alt="3TierArch" src="https://github.com/user-attachments/assets/ca048ef3-6d5c-44a9-b90d-8bbd87872be9" />
 
 This project provides a hands-on walkthrough of deploying a three-tier web architecture on AWS.
 

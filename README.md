@@ -1,65 +1,55 @@
-# AWS3TierArch
+🏗️ Project Overview
 
-##################🏗️ AWS Three-Tier Web Architecture Project Overview################
+This project provides a hands-on walkthrough of deploying a three-tier web architecture on AWS.
 
+📋 Prerequisites
 
-This project is a hands-on walkthrough of deploying a three-tier web architecture on AWS.
-You’ll manually build and configure each component required to run a secure, highly available, and scalable application.
-
-🔑 Learning Objectives
-
-By completing this project, you will learn how to:
-
-Design and deploy networking – VPC, subnets, routing tables, and internet/NAT gateways.
-
-Implement security – configure security groups, NACLs, and IAM roles.
-
-Set up the application tier – launch EC2 instances and configure a load balancer.
-
-Provision the database tier – deploy and secure a managed database service (e.g., Amazon RDS).
-
-Test availability & scalability – confirm the architecture supports growth and resilience.
-
-🧰 Prerequisites
+Before starting, ensure you have:
 
 An active AWS account
 
-IAM user with sufficient permissions
+IAM user with sufficient permissions (VPC, EC2, RDS, IAM, ELB)
 
 Basic knowledge of networking, Linux, and AWS services
 
-📝 Workshop Steps
+AWS CLI and/or access to the AWS Management Console
 
-Networking Layer
+🌐 Networking
 
-Create a VPC
+You will create and configure:
 
-Add public and private subnets
+VPC
 
-Configure internet and NAT gateways
+Public and private subnets
 
-Security Layer
+Routing tables
 
-Set up security groups for web, app, and database tiers
+Internet and NAT gateways
 
-Apply NACLs for subnet-level protection
+🔒 Security
 
-Assign IAM roles for EC2 and database access
+You will implement:
 
-Application Layer
+Security Groups
 
-Launch EC2 instances in the private subnets
+Network ACLs (NACLs)
 
-Configure an Application Load Balancer (ALB)
+IAM roles for access management
 
-Deploy a sample web application
+⚙️ Application Tier
 
-Database Layer
+You will set up:
 
-Launch an RDS instance in private subnets
+EC2 instances in private subnets
 
-Configure parameter groups, backups, and multi-AZ
+An Application Load Balancer (ALB)
 
-Validation
+A sample web application
 
-Access the application through the ALB DNS
+🗄️ Database Tier
+
+You will deploy:
+
+An Amazon RDS instance
+
+Backups and multi-AZ configuration

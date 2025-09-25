@@ -1,8 +1,4 @@
 ﻿
-
-🚀 AWS VPC Setup
-This guide walks through creating a VPC with public and private subnets across two Availability Zones (AZs). It also includes configuring an Internet Gateway (IGW), NAT Gateway, and route tables to ensure both public and private resources can access the internet securely.
-
 1️⃣ Create a VPC
 1. Navigate to the VPC Dashboard in the AWS Management Console.
 2. Click Create VPC.

@@ -31,8 +31,6 @@ You will implement:
 
 Security Groups
 
-Network ACLs (NACLs)
-
 IAM roles for access management
 
 ⚙️ Application Tier

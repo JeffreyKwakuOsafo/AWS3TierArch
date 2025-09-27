@@ -6,6 +6,10 @@ This tier runs on EC2 instances inside private subnets, connects to the database
 Instead of using SSH keys, we’ll use IAM roles and SSM, which is safer and more modern.
 
 Create an EC2 Role 🔑
+<img width="1500" height="403" alt="role" src="https://github.com/user-attachments/assets/a67c5201-c6e2-4a30-919f-1b63e3f4913f" />
+<img width="1489" height="442" alt="role1" src="https://github.com/user-attachments/assets/137c5ed9-739e-463b-8d77-5ee2ca0e175f" />
+
+
 Before launching the instance, give it the right permissions:
 
 Go to IAM → Roles.
@@ -29,6 +33,7 @@ Select Amazon Linux as the AMI.
 Skip key pairs (since we’ll use SSM).
 
 Under Networking:
+<img width="1671" height="887" alt="apptier1" src="https://github.com/user-attachments/assets/117ac825-db54-4eba-b5e7-bdc6d098f67c" />
 
 Choose your project VPC.
 
@@ -37,8 +42,15 @@ Place it in a private subnet (AZ1).
 Attach the Private Instance Security Group.
 
 In Advanced settings, select the IAM role you just created.
+<img width="1668" height="890" alt="apptier2" src="https://github.com/user-attachments/assets/c55fc94b-fac2-426d-8f55-7c980d8c951e" />
 
-Now your instance has the right “identity card” to talk to AWS services.
+Connect to your instance via Session Manager
+
+<img width="1904" height="634" alt="apptier3" src="https://github.com/user-attachments/assets/79270a10-dec6-4484-9898-f9dd334b18a8" />
+
+Run the command sudo -su ec2-user
+Ping the Google DNS IP on 8.8.8.8 to confirm internet connectivity
+
 
 Install the MySQL Client 💽
 We’ll need the MySQL client to talk to the database. Run these commands on the instance:
@@ -50,11 +62,10 @@ sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 
 sudo yum install mysql -y
 
-Then test the connection:
-
-mysql -h <DB-ENDPOINT> -u admin -p
+mysql -h <DB-ENDPOINT> -u admin -p (h flag = your rds writer endpoint; u = database username; p = password)
 
 If you see a MySQL prompt after entering your password, you’re in! 🎉
+<img width="1546" height="498" alt="connecting to rds instance" src="https://github.com/user-attachments/assets/0e498ec5-f359-4e93-8729-a949928b1f62" />
 
 Configure Database Settings 📝
 Your app needs to know how to reach the database.
@@ -63,9 +74,9 @@ Edit the dbConfig.js file in the app-tier folder.
 
 Add your database endpoint, username, password, and database name.
 
-Upload this file to your S3 bucket, along with the entire app-tier folder.
+Create S3 bucket and upload this file to your S3 bucket, along with the entire app-tier folder.
+<img width="1920" height="721" alt="create s3 bucket" src="https://github.com/user-attachments/assets/f915ed57-a1f9-4087-9a9b-2b4764781e8b" />
 
-Now the instance can download the app and config from S3.
 
 Install Node.js and PM2 ⚡
 Our backend is written in Node.js. Let’s set that up:
@@ -88,7 +99,7 @@ cd ~
 
 Download the app-tier code from S3:
 
-aws s3 cp s3://3tierwebarch1/app-tier/ app-tier --recursive
+aws s3 cp s3://bucketname/app-tier/ app-tier --recursive
 
 Navigate and install dependencies:
 
@@ -105,8 +116,9 @@ pm2 list
 
 If it says “online,” you’re good.
 
-If it says “errored,” it usually means your dbConfig.js wasn’t loaded correctly.
-Fix the config, then restart with pm2 start index.js and pm2 list.
+If it says “errored,” it usually means your dbConfig.js wasn’t downloaded unto your apptier instance.
+Download the config, then restart with pm2 start index.js and pm2 list.
+
 
 Keep the App Running After Reboot 🔄
 Run:

@@ -49,6 +49,10 @@ Maintain the cluster storage configuration as default.
 
 6️⃣ Availability and Durability 🌍
 
+✅ Create an Aurora replica (read node) in a different AZ.
+
+This ensures high availability and fault tolerance.
+
 Under VPC, select the VPC you created for this project.
 
 Choose the DB Subnet Group you created earlier. This ensures the database will be deployed across the two Availability Zones.
@@ -58,8 +62,5 @@ For Security Group, select the Database Security Group you set up previously. Th
 Review the configuration and click Create Database.
 
 At this point, AWS will provision the Aurora (MySQL-compatible) cluster in your selected VPC and subnets, secured by the database SG.
-Under Multi-AZ deployment, check:
-
-✅ Create an Aurora replica (read node) in a different AZ.
-
-This ensures high availability and fault tolerance.
+✅ Now your RDS database is fully provisioned and ready for your App Tier instances to connect.
+<img width="1913" height="599" alt="rds5" src="https://github.com/user-attachments/assets/671f0400-5c35-4844-8af5-19ffc9e12355" />

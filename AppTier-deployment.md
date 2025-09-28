@@ -64,6 +64,27 @@ sudo yum install mysql -y
 
 mysql -h <DB-ENDPOINT> -u admin -p (h flag = your rds writer endpoint; u = database username; p = password)
 
+After the initial database connection, we create a database schema, tables and populate by running the following commands.
+
+CREATE DATABASE webappdb;   
+
+SHOW DATABASES;
+
+USE webappdb;    
+
+CREATE TABLE IF NOT EXISTS transactions(id INT NOT NULL
+
+
+AUTO_INCREMENT, amount DECIMAL(10,2), description
+
+VARCHAR(100), PRIMARY KEY(id));    
+
+SHOW TABLES;    
+
+INSERT INTO transactions (amount,description) VALUES ('400','groceries');   
+
+SELECT * FROM transactions;
+
 If you see a MySQL prompt after entering your password, you’re in! 🎉
 <img width="1546" height="498" alt="connecting to rds instance" src="https://github.com/user-attachments/assets/0e498ec5-f359-4e93-8729-a949928b1f62" />
 

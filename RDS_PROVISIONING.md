@@ -17,6 +17,7 @@ Select the database subnets created in each AZ (one in AZ1, one in AZ2).
 Save the subnet group.
 
 2️⃣ Create an RDS Database
+<img width="949" height="833" alt="rds1" src="https://github.com/user-attachments/assets/93922cb9-e388-48eb-8f82-7e1d0cee94ee" />
 
 Navigate to Databases in the RDS dashboard.
 
@@ -48,6 +49,15 @@ Maintain the cluster storage configuration as default.
 
 6️⃣ Availability and Durability 🌍
 
+Under VPC, select the VPC you created for this project.
+
+Choose the DB Subnet Group you created earlier. This ensures the database will be deployed across the two Availability Zones.
+
+For Security Group, select the Database Security Group you set up previously. This will allow access only from your private application instances.
+
+Review the configuration and click Create Database.
+
+At this point, AWS will provision the Aurora (MySQL-compatible) cluster in your selected VPC and subnets, secured by the database SG.
 Under Multi-AZ deployment, check:
 
 ✅ Create an Aurora replica (read node) in a different AZ.

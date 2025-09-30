@@ -58,6 +58,7 @@ We’ll need the MySQL client to talk to the database. Run these commands on the
 sudo wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 
 sudo yum install mysql57-community-release-el7-11.noarch.rpm
+
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
 
 sudo yum install mysql -y

@@ -39,7 +39,8 @@ Path: /health
 Click Create.
 
 
-3. ⚖️ Create an Internal Load Balancer
+3. ⚖️ Create an External Load Balancer
+<img width="1920" height="1080" alt="Screenshot (1942)" src="https://github.com/user-attachments/assets/632812a3-b570-4a81-9e0d-30d5969ab699" />
 
 From the EC2 Dashboard, go to Load Balancers.
 
@@ -118,7 +119,10 @@ Review → Create Auto Scaling group.
 Navigate to the external load balancer details, copy and paste external load balancer DNS name into browser
 
 
+<img width="1920" height="1080" alt="Screenshot (1946)" src="https://github.com/user-attachments/assets/71ca887c-c5dd-4ded-9338-bd8c05bb8697" />
 
 
+<img width="1920" height="1080" alt="Screenshot (1947)" src="https://github.com/user-attachments/assets/947962e8-c380-4f1b-add5-91ff99ca54ea" />
 
 
+<img width="1920" height="1080" alt="Screenshot (1948)" src="https://github.com/user-attachments/assets/5d237b82-5258-4673-b979-0a77a0f4edd3" />

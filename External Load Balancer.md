@@ -1,0 +1,124 @@
+
+🚀 App Tier Setup with Auto Scaling and External Load Balancer
+ App Tier in AWS using an External Application Load Balancer (ALB) and an Auto Scaling Group (ASG) 
+
+1. 🖼️ Create an AMI of the App Tier Instance
+
+Go to the EC2 Dashboard.
+
+Select your App Tier Instance.
+
+Click Actions → Image → Create Image.
+
+Give it a name and description.
+
+Hit Create Image → this will save a reusable AMI (Amazon Machine Image).
+
+
+
+2. 🎯 Create a Target Group
+
+In the EC2 Dashboard, open Target Groups.
+
+Click Create target group.
+
+Select Instances as the target type.
+
+Enter a friendly name.
+
+Set Protocol: HTTP and Port: 80 (HTTP works on port 80).
+
+Choose your project’s VPC.
+
+Set up health checks:
+
+Protocol: HTTP
+
+Path: /health
+
+Click Create.
+
+
+3. ⚖️ Create an Internal Load Balancer
+
+From the EC2 Dashboard, go to Load Balancers.
+
+Click Create Load Balancer → choose Application Load Balancer (ALB).
+
+(We use ALB since HTTP is at the application layer).
+
+Set Scheme: Internet-facing.
+
+Give it a name.
+
+Pick your project’s VPC and select two public subnets.
+
+Attach the External Load Balancer Security Group.
+
+Add a listener:
+
+Protocol: HTTP
+
+Port: 80
+
+Click Next: Configure Routing.
+
+Attach the target group you just created.
+
+Review everything → Create Load Balancer.
+
+
+4. 📝 Create a Launch Template
+
+Go to EC2 Dashboard → Launch Templates.
+
+
+Click Create launch template.
+
+Give it a name and description.
+
+Select the AMI you created earlier.
+
+Choose an instance type (e.g., t2.micro).
+
+Attach the App Tier Security Group.
+
+Under Advanced details, set IAM instance profile → choose the EC2Role from the start of the project.
+
+Click Create launch template.
+
+5. 🤖 Create an Auto Scaling Group
+ 
+
+
+In the EC2 Dashboard, go to Auto Scaling Groups.
+
+Click Create Auto Scaling group.
+
+Enter a name.
+
+Select the launch template from step 4.
+
+Click Next.
+
+Choose your project’s VPC and public subnets.
+
+In advanced options, attach the external load balancer.
+
+Set the group size:
+
+Desired: 2
+
+Minimum: 2
+
+Maximum: 4
+
+Review → Create Auto Scaling group.
+
+Navigate to the external load balancer details, copy and paste external load balancer DNS name into browser
+
+
+
+
+
+

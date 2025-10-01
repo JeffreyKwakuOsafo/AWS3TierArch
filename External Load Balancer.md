@@ -1,12 +1,12 @@
 
-🚀 App Tier Setup with Auto Scaling and External Load Balancer
+🚀 Web Tier Setup with Auto Scaling and External Load Balancer
  App Tier in AWS using an External Application Load Balancer (ALB) and an Auto Scaling Group (ASG) 
 
 1. 🖼️ Create an AMI of the App Tier Instance
 
 Go to the EC2 Dashboard.
 
-Select your App Tier Instance.
+Select your Web Tier Instance.
 
 Click Actions → Image → Create Image.
 
@@ -82,7 +82,7 @@ Select the AMI you created earlier.
 
 Choose an instance type (e.g., t2.micro).
 
-Attach the App Tier Security Group.
+Attach the Web Tier Security Group.
 
 Under Advanced details, set IAM instance profile → choose the EC2Role from the start of the project.
 

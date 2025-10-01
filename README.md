@@ -49,8 +49,13 @@ You will deploy:
 
 An Amazon RDS instance
 
-Backups and multi-AZ configuration
+multi-AZ configuration
 
 ✅ Outcome
 
 By the end of this project, you will have a scalable, secure, and highly available three-tier architecture running on AWS.
+
+<img width="1920" height="1080" alt="Screenshot (1947)" src="https://github.com/user-attachments/assets/2acb5829-7414-4a79-bfe9-d347ea2194f5" />
+
+
+<img width="1920" height="1080" alt="Screenshot (1948)" src="https://github.com/user-attachments/assets/003802bd-2827-40b1-9576-b0f72514df35" />

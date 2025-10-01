@@ -1,8 +1,7 @@
 
-🚀 Web Tier Setup with Auto Scaling and External Load Balancer
- App Tier in AWS using an External Application Load Balancer (ALB) and an Auto Scaling Group (ASG) 
+🚀 Web Tier Setup with Auto Scaling and Application Load Balancer
 
-1. 🖼️ Create an AMI of the App Tier Instance
+1. 🖼️ Create an AMI of the Web Tier Instance
 
 Go to the EC2 Dashboard.
 
